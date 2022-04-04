@@ -1,0 +1,37 @@
+.articleContainer {
+    background-color: rgb(84, 84, 84);
+    padding: 10px 20px;
+    border: 1px solid white;
+}
+
+.articleContainer > .header { 
+    color: #fff;
+    padding: 10px 0px;
+}
+.articleContainer > .header > h1{ 
+    font-weight: 600;
+    font-size: 27px;
+}
+.articleContainer > .header > h2{ 
+    font-weight: 300;
+}
+
+.articleContainer > .content {
+    padding: 20px 0px;
+    font-size: large;
+}
+
+.articleContainer > .votes { 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.articleContainer > .votes > * > button {
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.articleContainer > .votes > * > span {
+    padding: 10px;
+    color: #fff
+}

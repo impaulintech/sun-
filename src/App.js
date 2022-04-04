@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import axios from 'axios'
+import Nav from "./component/Nav"
+import Article from "./component/Article"
+import Thumbnail from './component/Thumbnail';
+
 
 function App() {
+  const [article, setArticle] = useState([])
+  const [upvote, setUpvote] = useState(0)
+  const [downvote, setDownvote] = useState(0)
+
+  useEffect(() => {
+    axios("https://jsonplaceholder.typicode.com/posts")
+      .then((result) => {
+        setArticle(result.data)
+      })
+
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Thumbnail
+        article={article}
+        upvote={upvote}
+        downvote={downvote}
+        setUpvote={setUpvote}
+        setDownvote={setDownvote} />
+    </>
   );
 }
 

@@ -1,0 +1,26 @@
+.navContainer {
+     background-color: #1840f3;
+     display: flex;
+     justify-content: space-between;
+     padding: 10px 20px;
+
+}
+
+.navContainer > div {
+    display: flex;
+    gap: 1rem;
+
+}
+.buttons > * {
+    background-color: rgb(59, 58, 58);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 10px 20px;
+}
+
+.createArticle {
+    background-color: rgb(93, 93, 93);
+    padding: 10px 20px;
+}
